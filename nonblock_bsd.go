@@ -17,7 +17,6 @@
 package tcell
 
 import (
-	"os"
 	"syscall"
 
 	"golang.org/x/sys/unix"
@@ -30,7 +29,9 @@ import (
 // that loop.  Normally we use VMIN 1 and VTIME 0, which ensures we pick up bytes when
 // they come but don't spin burning cycles.
 func (t *tScreen) nonBlocking(on bool) {
-	fd := int(os.Stdin.Fd())
+	// BOZO!!
+	// fd := int(os.Stdin.Fd())
+	fd := int(t.in.Fd())
 	tio, err := unix.IoctlGetTermios(fd, unix.TIOCGETA)
 	if err != nil {
 		return
