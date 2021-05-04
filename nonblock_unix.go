@@ -17,10 +17,10 @@
 package tcell
 
 import (
-	"os"
 	"syscall"
 
 	"golang.org/x/sys/unix"
+)
 
 // NB: We might someday wish to move Windows to this model.   However,
 // that would probably mean sacrificing some of the richer key reporting
