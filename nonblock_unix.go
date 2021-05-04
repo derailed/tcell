@@ -21,7 +21,6 @@ import (
 	"syscall"
 
 	"golang.org/x/sys/unix"
-)
 
 // NB: We might someday wish to move Windows to this model.   However,
 // that would probably mean sacrificing some of the richer key reporting
@@ -34,7 +33,7 @@ import (
 func (t *tScreen) nonBlocking(on bool) {
 	// BOZO!!
 	// fd := int(os.Stdin.Fd())
-	fd := int(os.in.Fd())
+	fd := int(t.in.Fd())
 	tio, err := unix.IoctlGetTermios(fd, unix.TCGETS)
 	if err != nil {
 		return
