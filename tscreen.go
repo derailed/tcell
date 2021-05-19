@@ -179,6 +179,11 @@ func (t *tScreen) Init() error {
 
 	t.quit = make(chan struct{})
 
+	t.TPuts(ti.EnterCA)
+	t.TPuts(ti.HideCursor)
+	t.TPuts(ti.EnableAcs)
+	t.TPuts(ti.Clear)
+
 	t.Lock()
 	t.cx = -1
 	t.cy = -1
@@ -638,7 +643,7 @@ func (t *tScreen) drawCell(x, y int) int {
 			t.TPuts(ti.TGoto(x-1, y))
 			t.TPuts(ti.InsertChar)
 			t.cy = y
-			t.cx = x-1
+			t.cx = x - 1
 			t.cells.SetDirty(x-1, y, true)
 			_ = t.drawCell(x-1, y)
 			t.TPuts(t.ti.TGoto(0, 0))
