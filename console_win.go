@@ -19,7 +19,6 @@ package tcell
 import (
 	"errors"
 	"fmt"
-	"github.com/rs/zerolog/log"
 	"os"
 	"strings"
 	"sync"
