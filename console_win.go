@@ -19,13 +19,13 @@ package tcell
 import (
 	"errors"
 	"fmt"
+	"github.com/rs/zerolog/log"
 	"os"
 	"strings"
 	"sync"
 	"syscall"
 	"unicode/utf16"
 	"unsafe"
-	"github.com/rs/zerolog/log"
 )
 
 type cScreen struct {
@@ -264,6 +264,7 @@ func (s *cScreen) EnablePaste() {}
 func (s *cScreen) DisablePaste() {}
 
 func (s *cScreen) Fini() {
+	close(s.quit)
 	s.disengage()
 }
 
@@ -347,7 +348,6 @@ func (s *cScreen) PostEvent(ev Event) error {
 func (s *cScreen) PollEvent() Event {
 	select {
 	case <-s.quit:
-		log.Debug().Msgf("YO!! Poll QUIT!")
 		return nil
 	case ev := <-s.evch:
 		return ev
