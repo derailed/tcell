@@ -1,3 +1,4 @@
+//go:build !tcell_minimal
 // +build !tcell_minimal
 
 // Copyright 2019 The TCell Authors
@@ -19,5 +20,5 @@ package tcell
 import (
 	// This imports the default terminal entries.  To disable, use the
 	// tcell_minimal build tag.
-	_ "github.com/gdamore/tcell/v2/terminfo/extended"
+	_ "github.com/derailed/tcell/v2/terminfo/extended"
 )

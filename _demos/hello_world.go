@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // Copyright 2020 The TCell Authors
@@ -20,8 +21,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/gdamore/tcell/v2"
-	"github.com/gdamore/tcell/v2/encoding"
+	"github.com/derailed/tcell/v2"
+	"github.com/derailed/tcell/v2/encoding"
 
 	"github.com/mattn/go-runewidth"
 )

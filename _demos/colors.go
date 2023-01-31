@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 // Copyright 2019 The TCell Authors
@@ -28,7 +29,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/gdamore/tcell/v2"
+	"github.com/derailed/tcell/v2"
 )
 
 var red = int32(rand.Int() % 256)

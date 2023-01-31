@@ -1,3 +1,4 @@
+//go:build windows
 // +build windows
 
 // Copyright 2021 The TCell Authors
@@ -19,7 +20,6 @@ package tcell
 import (
 	"errors"
 	"fmt"
-	"github.com/rs/zerolog/log"
 	"os"
 	"strings"
 	"sync"

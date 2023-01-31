@@ -1,3 +1,4 @@
+//go:build tcell_minimal || nacl || js || zos || plan9 || windows || android
 // +build tcell_minimal nacl js zos plan9 windows android
 
 // Copyright 2019 The TCell Authors
@@ -19,7 +20,7 @@ package tcell
 import (
 	"errors"
 
-	"github.com/gdamore/tcell/v2/terminfo"
+	"github.com/derailed/tcell/v2/terminfo"
 )
 
 func loadDynamicTerminfo(_ string) (*terminfo.Terminfo, error) {
