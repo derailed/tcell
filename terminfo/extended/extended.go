@@ -52,6 +52,7 @@ import (
 	_ "github.com/derailed/tcell/v2/terminfo/w/wy99_ansi"
 	_ "github.com/derailed/tcell/v2/terminfo/x/xfce"
 	_ "github.com/derailed/tcell/v2/terminfo/x/xterm"
+	_ "github.com/derailed/tcell/v2/terminfo/x/xterm_ghostty"
 	_ "github.com/derailed/tcell/v2/terminfo/x/xterm_kitty"
 	_ "github.com/derailed/tcell/v2/terminfo/x/xterm_termite"
 )
