@@ -1643,6 +1643,7 @@ func (t *tScreen) engage() error {
 	t.running = true
 	if w, h, err := t.tty.WindowSize(); err == nil && w != 0 && h != 0 {
 		t.cells.Resize(w, h)
+		t.w, t.h = w, h
 	}
 	stopQ := make(chan struct{})
 	t.stopQ = stopQ
